@@ -28,14 +28,10 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '8.0'  # Specify your project's .NET version
+          dotnet-version: '7.0'  # Specify your project's .NET version
 
       - name: Install SonarCloud scanner
         run: dotnet tool install --global dotnet-sonarscanner
-        shell: powershell
-
-      - name: Restore NuGet packages
-        run: dotnet restore Explorer.sln
         shell: powershell
 
       - name: Begin SonarCloud analysis
