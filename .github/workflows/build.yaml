@@ -42,7 +42,7 @@ jobs:
         shell: powershell
 
       - name: Build the project
-        run: msbuild /t:Rebuild /p:Configuration=Release Explorer.sln
+        run: msbuild /t:Rebuild /p:Configuration=Release src/Explorer.sln
         shell: powershell
 
       - name: End SonarCloud analysis
