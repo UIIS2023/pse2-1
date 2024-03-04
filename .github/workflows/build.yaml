@@ -41,6 +41,10 @@ jobs:
         run: dotnet-sonarscanner begin /k:"UIIS2023_pse2-1" /o:"uiis2023" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
         shell: powershell
 
+      - name: Restore NuGet packages
+        run: dotnet restore src/Explorer.sln
+        shell: powershell
+
       - name: Build the project
         run: msbuild /t:Rebuild /p:Configuration=Release src/Explorer.sln
         shell: powershell
